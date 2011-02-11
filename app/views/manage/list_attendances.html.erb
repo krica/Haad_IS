@@ -1,0 +1,19 @@
+<%= link_to t('Back'), {:action => :index}, :class => "btn-show" %>
+<table>
+  <% @users.each do |user| %>
+    <tr>
+      <td style="width: 700px">
+        <%= user.display_name %>
+        <% if user.attendances != [] %>
+          <%= link_to t('Show'), {:action => :show, :controller => :attendances, :id => user.id}, :class => "btn-show right shift-up" %>
+        <% else %>
+          <span class="right" style="width: 80px;text-align: center;font-size: 12px;">
+            <%= t('No attendance') %>
+          </span>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to t('Back'), {:action => :index}, :class => "btn-show" %>

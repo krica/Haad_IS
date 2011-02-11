@@ -1,0 +1,58 @@
+<%= javascript_include_tag 'jquery.keypad.min' %>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $.keypad.regional['cs'] = {
+          buttonText: '...', buttonStatus: 'Otevřít',
+          closeText: 'OK', closeStatus: 'Zavřít',
+          clearText: 'Smazat', clearStatus: 'Smazat vše',
+          backText: 'Zpět', backStatus: 'Zpět',
+          shiftText: 'Shift', shiftStatus: 'Přepnout velká / malá písmena',
+          isRTL: true};
+          $.keypad.setDefaults($.keypad.regional['cs']);
+          
+
+$(".keypad").keypad({
+    keypadOnly: false,
+    isAlphabetic: $.keypad.isAlphabetic,
+    alphabeticLayout: $.keypad.qwertyAlphabetic,
+    showAnim: 'fadeIn',
+    layout: $.keypad.qwertyLayout
+  });
+
+});
+
+</script>
+
+
+<h1><%= t('Editing user') %></h1>
+
+<% form_for(@user, :url => {:action => :update, :id => @user.id}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :card, t('Card') %><br />
+    <%= f.text_field :card, :class => "keypad" %>
+  </p>
+  <p>
+    <%= f.label :name, t('Name') %><br />
+    <%= f.text_field :name, :class => "keypad"  %>
+  </p>
+  <p>
+    <%= f.label :surname, t('Surname') %><br />
+    <%= f.text_field :surname, :class => "keypad"  %>
+  </p>
+  <p>
+    <%= f.label :email, t('Email') %><br />
+    <%= f.text_field :email, :class => "keypad"  %>
+  </p>
+  <p>
+    <%= f.label :phone, t('Phone') %><br />
+    <%= f.text_field :phone, :class => "keypad"  %>
+  </p>
+  <br />
+    <%= f.submit t('Update'),  :class => "btn-small" %>
+  </p>
+<% end %>
+
+<%= link_to t('Back'), "/users", :class => "btn-show" %>

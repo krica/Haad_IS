@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag 'reset.css' %>
+    <%= #javascript_include_tag :defaults
+    %>
+    <%= javascript_include_tag 'webcam' %>
+    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'jquery.prettyGallery' %>
+    <%= javascript_include_tag 'jquery.prettyPhoto' %>
+    <%= stylesheet_link_tag 'main.css' %>
+  </head>
+  <body>
+    <div id="content" style="height: 100px">
+      <div id="head">  
+        <%= link_to(image_tag('/images/logo.png', :class => "logo"), '/', :class => "logo-link") %>
+        <% if @status %>
+          <span class="user-name">
+            <%= @status %>
+          </span>
+        <% end %>
+        <% if @user && !@status %>
+          <span class="user-name">
+            <%= @user.display_name.to_s %>
+          </span>
+        <% end %>
+
+      </div>
+      <div id="wrapper" style="height:420px;">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <br />
+        <br />
+        <br />
+        <span style="font-size:2em;margin-left: 20px;">
+          HAAD Company s.r.o.
+        </span>
+        <span style="font-size:1.6em;float:right;margin-right:30px;">
+        haad@haad.cz&nbsp; +420 774 414 072
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
+

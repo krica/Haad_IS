@@ -1,0 +1,32 @@
+<h1>Editing attendance</h1>
+
+<% form_for(@attendance) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :start %><br />
+    <%= f.datetime_select :start %>
+  </p>
+  <p>
+    <%= f.label :end %><br />
+    <%= f.datetime_select :end %>
+  </p>
+  <p>
+    <%= f.label :start_photo_id %><br />
+    <%= f.text_field :start_photo_id %>
+  </p>
+  <p>
+    <%= f.label :end_photo_id %><br />
+    <%= f.text_field :end_photo_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @attendance %> |
+<%= link_to 'Back', attendances_path %>

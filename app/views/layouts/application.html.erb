@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%= stylesheet_link_tag 'reset.css' %>
+    <%= #javascript_include_tag :defaults
+    %>
+    <%= javascript_include_tag 'webcam.js' %>
+    <%= stylesheet_link_tag 'main.css' %>
+    <%= stylesheet_link_tag 'jquery.keypad.alt.css' %>
+    <%= stylesheet_link_tag 'jquery.keypad.css' %>
+    <%= javascript_include_tag 'jquery-1.3.2.min.js' %>
+    <%= javascript_include_tag 'jquery.keypad.min.js' %>
+    <%= javascript_include_tag 'jquery.keypad.min' %>
+    <%= javascript_include_tag 'application.js' %>
+<script src="/javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/stylesheets/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<script src="/javascripts/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+  </head>
+  <body>
+    <div id="content">
+      <div id="head">  
+        <%= link_to(image_tag('/images/logo.png', :class => "logo"), '/', :class => "logo-link") %>
+        <% if @status %>
+          <span class="user-name">
+            <%= @status %>
+          </span>
+        <% end %>
+        <% if @user && !@status %>
+          <span class="user-name">
+            <%= @user.display_name.to_s %>
+          </span>
+        <% end %>
+
+      </div>
+      <div id="wrapper">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+ <script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("a[rel^='prettyPhoto']").prettyPhoto();
+		});
+</script> 
+</html>
+

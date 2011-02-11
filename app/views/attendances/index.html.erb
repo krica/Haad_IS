@@ -1,0 +1,14 @@
+<% if !@user.attendance_ended? %>
+  <%= link_to t('End attendance'), {:action => :take_attendance_photo, :controller => :photos}, :class => "btn-main" %>
+  <% if !@user.attendances.last.pause_ended? %>
+    <%= link_to t('End pause'), {:action => :take_pause_photo, :controller => :photos}, :class => "btn-main" %>
+  <% else %>
+    <%= link_to t('Start pause'), {:action => :take_pause_photo, :controller => :photos}, :class => "btn-main" %>
+  <% end %>
+<% else %>
+  <%= link_to t('Start attendance'), {:action => :take_attendance_photo, :controller => :photos}, :class => "btn-main" %>
+<% end %>
+<% if @user.is_admin? %>
+  <%= link_to t('Management'), {:action => :index, :controller => :manage}, :class => "btn-main" %>
+<% end %>
+

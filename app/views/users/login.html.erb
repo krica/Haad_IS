@@ -1,0 +1,14 @@
+<div class="center">
+  <div id="login">
+    <% form_tag :action => :verify_user do %>
+      <br/>
+      <%= password_field_tag :card, "", :class => "wide" %>
+      <br />
+      <%= submit_tag t('Ok'), :style => "display:none" %>
+    <% end %>
+  </div>
+  <script>
+      $('#card').focus();
+  </script>
+</div>
+

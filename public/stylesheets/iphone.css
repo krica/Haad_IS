@@ -1,0 +1,19 @@
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+
+.worker-thumb {
+  margin-right: 30px;
+}
+
+.functional-btns a {
+  color: #000;
+  line-height: 110%;
+}
+
+.functional-btns img {
+  margin-right: 4px;
+}

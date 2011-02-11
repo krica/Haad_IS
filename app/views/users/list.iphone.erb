@@ -1,0 +1,17 @@
+<div id="all_users" class="current">
+  <div class="toolbar">
+  <h1><%= t('HAAD') %></h1>
+  <%= link_to t("Back"), "#list", :class => "back" %>
+</div>
+<h2><%= t "All users" %></h2>
+<ul class="rounded">
+  <% @users.each do |user| %>
+    <li class="arrow">
+      <a href="/users/show/<%= user.id %>">
+        <%= user_small_picture(user) %>
+        <%= user.display_name %>
+      </a>
+    </li>
+
+  <% end %>
+</ul>

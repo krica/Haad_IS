@@ -1,0 +1,60 @@
+cs:
+  Start attendance: Příchod
+  Take picture: Vyfotit
+  Take another: Vyfotit znovu
+  Back: Zpět
+  Use photo: Použít fotku
+  End attendance: Odchod
+  Start pause: Pauza
+  End pause: Konec pauzy
+  Management: Správa
+  Add user: Přidat uživatele
+  Create: Vytvořit
+  New user: Nový uživatel
+  Card: Číslo karty
+  Name: Jméno
+  Surname: Příjmení
+  Email: Email
+  Phone: Telefon
+  List attendance: Sledovat docházku
+  Show: Ukázat
+  No attendance: Nemá
+  Open all: Otevřít vše
+  Close all: Skrýt vše
+  Filters: Vybrat datum
+  Cancel: Zrušit
+  Ok: "OK"
+  Pauses: Pauzy
+  Hide: Skrýt
+  Destroy filter: Zrušit filtr
+  From: Od
+  To: Do
+  date: 
+    formats: 
+      default: "%e. %m. %Y"
+      long: "%e. %m. %Y"
+      short: "%e. %m."
+    day_names: [Sobota, Neděle, Pondělí, Úterý, Středa, Čtvrtek, Pátek] 
+    abbr_day_names: [So, Ne, Po, Út, St, Čt, Pá]
+    month_names: [~, Leden, Únor, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
+    abbr_month_names: [~, Led, Úno, Bře, Dub, Kvě, Čvn, Čvc, Srp, Zář, Říj, Lis, Pro]
+  activerecord:
+    models:
+      users: Uživatele
+    errors:
+      template:
+        header: Vyskytla se chyba
+        body: nebylo možné záznam vytvořit
+  Leave: Odejít
+  Duration: Délka
+  Duration without pause: Délka bez pauz
+  Manage users: Spravovat uživatele
+  Managing users: Sráva uživatelů
+  Edit: Upravit
+  Destroy: Smazat
+  Are you sure: Jste si jistý?
+  Editing user: Úprava uživatele
+  Update: Upravit
+  HAAD: "HAAD IS"
+  Now working: Právě pracují
+  All users: Všichni zaměstnanci

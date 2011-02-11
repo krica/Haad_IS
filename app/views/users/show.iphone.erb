@@ -1,0 +1,19 @@
+<div id="show" class="current">
+  <div class="toolbar">
+  <h1><%= t('HAAD') %></h1>
+  <%= link_to t("Back"), "#list", :class => "back" %>
+</div>
+<h2><%= @user.display_name %></h2>
+<ul class="rouded">
+  <li>
+<%= user_show_picture(@user) %>
+  </li>
+</ul>
+<ul class="rounded">
+  <li class="arrow">
+  <%= link_to t("Phone") + ": " + @user.phone, "tel:" + @user.phone, :target => "_blank" %>
+  </li>
+  <li class="arrow">
+  <%= link_to t("Email") + ": " + @user.email, "mailto:" + @user.email, :target => "_blank" %>
+  </li>
+</ul>

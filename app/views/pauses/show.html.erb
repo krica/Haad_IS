@@ -1,0 +1,28 @@
+<p>
+  <b>Start:</b>
+  <%=h @pause.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%=h @pause.end %>
+</p>
+
+<p>
+  <b>Start photo:</b>
+  <%=h @pause.start_photo_id %>
+</p>
+
+<p>
+  <b>End photo:</b>
+  <%=h @pause.end_photo_id %>
+</p>
+
+<p>
+  <b>Attendance:</b>
+  <%=h @pause.attendance_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_pause_path(@pause) %> |
+<%= link_to 'Back', pauses_path %>

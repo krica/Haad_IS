@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start: 2010-10-14 22:39:25
+  end: 2010-10-14 22:39:25
+  start_photo_id: 1
+  end_photo_id: 1
+  user_id: 1
+
+two:
+  start: 2010-10-14 22:39:25
+  end: 2010-10-14 22:39:25
+  start_photo_id: 1
+  end_photo_id: 1
+  user_id: 1

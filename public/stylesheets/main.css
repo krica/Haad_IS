@@ -1,0 +1,263 @@
+body {
+  font-family:  Helvetica,Tahoma, Arial, sans-serif;
+  color: #030303;
+  background: #777688;
+  width: 1008px;
+}
+
+#content {
+  min-height: 763px;
+  width: 1008px;
+}
+#head {
+  height: 164px;
+  background: url('../images/head_bg.png') repeat-x;
+}
+
+#wrapper {
+  padding: 20px;
+}
+
+#head a.logo-link {
+  float: left;
+  display: block;
+  margin-top: 65px;
+  margin-left: 30px;
+}
+
+a {
+  color: #000;
+}
+
+#head span.user-name {
+  float: left;
+  margin-top: 130px;
+  margin-left: 10px;
+}
+
+td {
+  padding: 5px;
+  border-bottom: 1px #444 solid;
+}
+
+a.btn-small {
+  background: url('../images/btn_small.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+}
+
+a.btn-small-wider {
+  background: url('../images/btn_small_w.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 130px;
+  height: 33px;
+  line-height: 35px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+}
+
+input.btn-small {
+  background: url('../images/btn_small.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+  cursor: pointer;
+}
+
+input.btn-small-wider {
+  background: url('../images/btn_small_w.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 130px;
+  height: 33px;
+  line-height: 35px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+  cursor: pointer;
+}
+
+a.btn-main {
+  background: url('../images/btn_main.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 362px;
+  height: 57px;
+  font-weight: bold;
+  line-height: 57px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+  cursor: pointer;
+}
+
+a.btn-main:hover {
+  background: url('../images/btn_main_hover.png') no-repeat;
+  border: 0px;
+  display: block;
+  width: 362px;
+  height: 57px;
+  font-weight: bold;
+  line-height: 57px;
+  text-align: center;
+  color: #222;
+  text-decoration: none; 
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+#take_photo {
+  margin-left: 370px;
+}
+
+#photo_menu {
+  margin-left: 290px;
+}
+#login {
+  margin-top: 100px;
+  width: 489px;
+  height: 91px;
+  background: url('../images/box.png') no-repeat;
+  text-align: center;
+  margin-left: 240px;
+}
+#login input.wide {
+  width: 390px;
+  text-align: center;
+  font-size: 110%;
+  margin-top: 10px;
+}
+
+#footer {
+  height: 139px;
+  background: url('../images/footer_bg.png') repeat-x;
+}
+
+#attendance-menu {
+  margin-top: 30px;
+  margin-left: 290px;
+}
+.top {
+  margin-bottom: 5px;
+}
+
+#attendance-list li.main-hour {
+  width: 800px;
+  min-height: 77px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  background: #605e7a;
+}
+
+a.btn-show {
+  background: url('../images/btn_show.png') no-repeat;
+  width: 80px;
+  height: 28px;
+  border: 0px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 28px;
+  font-size: 12px;
+}
+
+input.btn-show {
+  background: url('../images/btn_show.png') no-repeat;
+  width: 80px;
+  height: 28px;
+  border: 0px;
+  cursor: pointer;
+}
+
+#attendance-list .btn-show {
+  background: url('../images/btn_show.png') no-repeat;
+  width: 80px;
+  height: 28px;
+  border: 0px;
+  cursor: pointer;
+}
+
+#attendance-list td {
+  border: 0px;
+  padding: 0px;
+  padding-right: 10px;
+} 
+#attendance-list div.pauses-list {
+  margin-left: 30px;
+  margin-top: 7px;
+}
+
+#attendance-list li.breaks {
+  width: 700px;
+  min-height: 77px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background: #777688;
+}
+
+#filters {
+  margin-left: 210px; 
+  position: absolute;
+  margin-top: -32px;
+}
+
+#filters option {
+  font-size: 20px;
+}
+#filters select {
+  min-width: 90px;
+  font-size: 20px;
+  text-align: left;
+}
+#filter-ok {
+  margin-bottom: 0px;
+  margin-top: -2px;
+}
+
+p {
+  padding: 5px;
+}
+a.shift-up {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+h1 {
+  padding-bottom: 15px;
+}
+.clear-all{
+	clear: both;
+}
+

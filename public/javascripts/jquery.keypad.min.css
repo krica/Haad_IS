@@ -1,0 +1,104 @@
+/* Alternate style sheet for jQuery Keypad v1.2.2 */
+button.keypad-trigger {
+	width: 25px;
+	padding: 0px;
+}
+img.keypad-trigger {
+	margin: 2px;
+	vertical-align: middle;
+}
+#keypad-div {
+	display: none;
+	z-index: 1000;
+	margin: 0;
+	padding: 5px;
+  background: url(/images/metal_bg.jpg) top center;
+	color: #000;
+	border: 1px solid #000;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 18px;
+}
+.keypad-keyentry {
+	display: none;
+}
+.keypad-inline {
+	background-color: #f4f4f4;
+	border: 1px solid #888;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+.keypad-disabled {
+	position: absolute;
+	z-index: 100;
+	background-color: white;
+	opacity: 0.25;
+	filter: alpha(opacity=25);
+}
+.keypad-rtl {
+	direction: rtl;
+}
+.keypad-prompt {
+	clear: both;
+	width: 100%;
+	text-align: center;
+}
+.keypad-row {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+.keypad-space {
+	float: left;
+	margin: 2px;
+	width: 60px;
+}
+* html .keypad-space { /* IE6 */
+	margin: 0px;
+	width: 28px;
+}
+.keypad-half-space {
+	float: left;
+	margin: 1px;
+	width: 12px;
+}
+* html .keypad-half-space { /* IE6 */
+	margin: 0px;
+	width: 14px;
+}
+.keypad-key {
+	float: left;
+	margin: 2px;
+	padding: 0px;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 20px;
+	border: 1px outset;
+	text-shadow: #fff 1px 1px 0px;
+	color: #000;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	background: #fff url(../images/checkbox_li_bg.png) bottom center repeat-x;
+	
+}
+.keypad-spacebar {
+	width: 164px;
+}
+.keypad-clear, .keypad-back, .keypad-close, .keypad-shift {
+	width: 100px;
+	font-weight: bold;
+}
+.keypad-cover {
+	display: none;
+	display/**/: block;
+	position: absolute;
+	z-index: -1;
+	filter: mask();
+	top: -4px;
+	left: -4px;
+}

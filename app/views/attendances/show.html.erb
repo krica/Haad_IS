@@ -1,0 +1,104 @@
+<%= link_to t('Back'), '/manage/list_attendances', :class => "btn-small left"%>
+<%= button_to_function t('Open all'), "$('.main-hour').children('div').slideDown();$('.pauses').hide();$(this).hide();$('#close-all').show();", :class => "btn-small left", :id => "open-all" %>
+<%= button_to_function t('Close all'), "$('.main-hour').children('div').slideUp();$('.pauses').show();$(this).hide();$('#open-all').show();", :class => "btn-small left", :id => "close-all", :style => "display:none" %>
+  <%= link_to_function t('Filters'), "$('#filters').slideDown('fast');$('#filters_link').hide();$('#destroy_filter').hide();$('this').hide()", :class => "btn-small left", :id => "filters_link" %>
+<% if params[:date] %>
+  <%= link_to t('Destroy filter'), {:action => :show}, :class => "left btn-small", :style => "padding-right:10px;", :id => "destroy_filter" %>
+<% end %>
+<br />
+<br />
+<%= flash[:notice] %>
+<% if params[:date] %>
+
+<% end %>
+<div id="filters" style="display:none" class="right">
+  <% form_tag({:action => :show}) do %>
+    
+    <%= t('From') %>
+    <%= date_select('date', 'from', {:order => [:day, :month, :year], :use_month_names => false}) %>
+    <%= t('To') %>
+    <%= date_select('date', 'to', {:order => [:day, :month, :year], :use_month_names => false}) %>
+    <%= submit_tag t('Ok'), :id => "filter-ok", :class => "btn-show" %>
+  <% end %>
+  <br />
+  <span class="right">
+    <%= link_to_function t('Cancel'), "$('#filters').slideUp();$('#filters_link').show();$('#filters').slideUp();", :class => "btn-show", :style => "margin-top:-10px;" %>
+  </span>
+</div>
+<br />
+<ul id="attendance-list">
+  <% @attendances.each do |attendance| %>
+    <li class="main-hour">
+      <table>
+        <tr>
+          <td style="width:300px;">
+            <%= t('Duration') %>:
+            <%= attendance.duration %><br />
+            <%= t('Duration without pause') %>:
+            <%= attendance.duration_without_break %>
+            <% if attendance.pauses != [] %>
+              <br />
+              <br />
+              <%= button_to_function t('Pauses'), "$('#pause_#{attendance.id}').slideDown();$(this).hide();" , :class => "btn-show", :id => "show_pause#{attendance.id}" %>
+            <% end %>
+          </td>
+          <td style="width:200px;">
+            <% if attendance.start_photo_id %>
+              <%= attendance.start.strftime("%H:%M %d.%m.%Y").to_s %><br />
+              <a href="<%=Photo.find(attendance.start_photo_id.to_s).image.url(:original) %>" rel="prettyPhoto"><%= image_tag(Photo.find(attendance.start_photo_id.to_s).image.url(:thumb), :size => "80x60") %></a>
+            <% end %>
+          </td>
+          <td>
+            <% if attendance.end %>
+              <%= attendance.end.strftime("%H:%M %d.%m.%Y").to_s %><br />
+            <% end %>
+            <% if attendance.end_photo_id %>
+              <a href="<%=Photo.find(attendance.end_photo_id.to_s).image.url(:original) %>" rel="prettyPhoto"><%= image_tag(Photo.find(attendance.end_photo_id.to_s).image.url(:thumb), :size => "80x60") %></a>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+      <div id="pause_<%= attendance.id %>" style="display:none;" class="pauses-list">
+        <ul>
+          <% if attendance.pauses != [] %>
+            <% attendance.pauses.each do |b| %>
+              <li class="breaks">
+                <table>
+                  <tr>
+                    <td style="width:265px;">
+                      <%= t('Duration') %>:
+                      <%= b.duration %>
+                    </td>
+                    <td style="width:220px;">
+                      <% if b.start %>
+                        <%= b.start.strftime("%H:%M %d.%m.%Y").to_s %><br />
+                      <% end %>
+                      <% if b.start_photo_id %>
+                        <a href="<%=Photo.find(b.start_photo_id.to_s).image.url(:original) %>" rel="prettyPhoto"><%= image_tag(Photo.find(b.start_photo_id.to_s).image.url(:thumb), :size => "80x60") %></a>
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if b.end %>
+                        <%= b.end.strftime("%H:%M %d.%m.%Y").to_s %><br />
+                      <% end %>
+                      <% if b.end_photo_id %>
+                      <a href="#" rel="prettyPhoto" class="gallery">
+                          <a href="<%=Photo.find(b.end_photo_id.to_s).image.url(:original) %>" rel="prettyPhoto"><%= image_tag(Photo.find(b.end_photo_id.to_s).image.url(:thumb), :size => "80x60") %></a>
+                        </a>
+                      <% end %>
+                    </td>
+                  </tr>
+                </table>
+              </li> 
+            <% end %>
+          <% end %>
+        </ul>
+        <%= button_to_function t('Hide'), "$('#pause_#{attendance.id}').slideUp();$('#show_pause#{attendance.id}').show()", :class => "btn-show" %>
+      </div>  
+    </li>
+  <% end %>
+</ul>
+<br />
+<%= link_to t('Back'), '/manage/list_attendances', :class => "btn-small left"%>
+
+

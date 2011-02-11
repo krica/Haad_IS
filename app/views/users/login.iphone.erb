@@ -1,0 +1,18 @@
+<div id="now_working" class="current">
+  <div class="toolbar">
+    <h1><%= t('HAAD') %></h1>
+  </div>
+<ul class="rounded">
+  <li class="arrow">
+    <%= link_to t("Now working"), {:controller => :attendances, :action => :list} %>
+    <small class="counter">
+      <%= @count %>
+    </small>
+  </li>
+  <li class="arrow">
+    <%= link_to t("All users"), {:controller => :users, :action => :list} %>
+    <small class="counter">
+      <%= User.all.count %>
+    </small>
+  </li>
+</ul>

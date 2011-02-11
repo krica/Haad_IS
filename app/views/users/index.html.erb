@@ -1,0 +1,34 @@
+<h1><%= t('Managing users') %></h1>
+<div>
+<%= link_to t('Add user'), "/users/new", :class => "btn-small-wider left" %>
+<%= link_to t('Back'), "/manage", :class => "btn-show left" %>
+</div>
+<br class="clear-all"/>
+<br />
+<table>
+  <tr>
+    <th><%= t('Surname') %></th>
+    <th><%= t('Name') %></th>
+    <th><%= t('Email') %></th>
+    <th><%= t('Phone') %></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.surname %></td>
+    <td><%=h user.name %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.phone %></td>
+    <td><%= link_to t('Edit'), "/users/edit/#{user.id}", :class => "btn-show" %></td>
+    <td><%= link_to t('Destroy'), "/users/destroy/#{user.id}", :confirm => t('Are you sure'), :method => :delete, :class => "btn-show" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div>
+<%= link_to t('Add user'), '/users/new', :class => "btn-small-wider left" %>
+<%= link_to t('Back'), "/manage", :class => "btn-show left" %>
+</div>
+<br class="clear-all"/>
+<br />
