@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :terminals
+
   map.resources :pauses
 
 

@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :attendances
   has_and_belongs_to_many :roles
-  
+  validates_uniqueness_of :card
+
   def self.now_working
     working = []
     users = User.find(:all)
