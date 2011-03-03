@@ -6,5 +6,7 @@ db/*.sqlite3*
 log/*.log
 tmp
 vendor/rails
-
+public/system/*
+public/uploads/*
+log/*
 
