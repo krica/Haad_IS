@@ -1,6 +1,8 @@
 class Attendance < ActiveRecord::Base
   belongs_to :user
   has_many :pauses
+
+  before_create :compose_token
   
   def duration
     if self.start and self.end
@@ -67,5 +69,9 @@ class Attendance < ActiveRecord::Base
       end
     end
     return false
+  end
+
+  def compose_token
+    self.token = Terminal.first.machine_id + Time.now.strftime("%Y%d%m%H%m%S")
   end
 end

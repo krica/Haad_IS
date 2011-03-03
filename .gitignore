@@ -10,4 +10,11 @@ public/system/*
 public/uploads/*
 log/*
 db/schema.rb
+*.kpf
+db/*.sqlite3
+db/schema.rb
+db/seeds.rb
+log/*.*
+log/test.log
+
 
