@@ -1,7 +1,7 @@
 class CreateTerminals < ActiveRecord::Migration
   def self.up
     create_table :terminals do |t|
-      t.string :mchine_id
+      t.string :machine_id
 
       t.timestamps
     end
