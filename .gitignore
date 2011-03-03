@@ -2,11 +2,12 @@
 .DS_Store
 config/database.yml
 db/*.sql
-db/*.sqlite3*
+db/*.sqlite3
 log/*.log
 tmp
 vendor/rails
 public/system/*
 public/uploads/*
 log/*
+db/schema.rb
 
