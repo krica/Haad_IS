@@ -11,6 +11,7 @@ $('webcam').innerHTML = webcam.get_html(640, 480);
 function upload_complete(msg) {
 if (msg == 'ok') {
 $('new_photo').show();
+$('new_photo').submit();
 $('photo_description').focus();
 } else {
 alert('An error occured');

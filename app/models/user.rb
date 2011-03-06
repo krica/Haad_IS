@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many :attendances
   has_and_belongs_to_many :roles
   validates_uniqueness_of :card
+  
+  validates_presence_of :name
+  validates_presence_of :surname
+
 
   def self.now_working
     working = []
