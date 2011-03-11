@@ -9,7 +9,7 @@ class ManageController < ApplicationController
 
   def list_attendances
     @users = User.all
-    @users.sort!{|x,y| x.surname <=> y.surname}
+    @users.sort!{|x,y| x.surname.downcase <=> y.surname.downcase}
   end
 
 end
