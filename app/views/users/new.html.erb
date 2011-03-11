@@ -51,6 +51,10 @@ $(".keypad").keypad({
     <%= f.label :phone, t('Phone') %><br />
     <%= f.text_field :phone, :class => "keypad"  %>
   </p>
+  <p>
+    <%= label_tag :admin, t("Admin") %><br />
+    <%= check_box_tag :admin, "true" %>
+  </p>
   <br />
   <%= f.submit t('Create'), :class => "btn-small" %>
 <% end %>

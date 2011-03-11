@@ -14,7 +14,7 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
+<tr style="<%= user.is_admin? ? "color: #A31414" : ""%>">
     <td><%=h user.surname %></td>
     <td><%=h user.name %></td>
     <td><%=h user.email %></td>

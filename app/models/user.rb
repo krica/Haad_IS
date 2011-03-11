@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :attendances
   has_and_belongs_to_many :roles
-  validates_uniqueness_of :card, :message => I18n.t("card has been taken")
+  validates_uniqueness_of :card, :message => I18n.t("card has been taken"), :allow_nil => true, :allow_blank => true
   
   validates_presence_of :name, :message => I18n.t("name must not be nil")
   validates_presence_of :surname, :message => I18n.t("surname must not be nil")
@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
   def is_admin?
     if self.roles.include?(Role.first)
       return true
+    else
+      return false
     end
   end
 

@@ -69,3 +69,4 @@ cs:
   card has been taken: je již v systému používané
   name must not be nil: nesmí být prázdné 
   surname must not be nil: nesmí být prázdné
+  Admin: Administrátor

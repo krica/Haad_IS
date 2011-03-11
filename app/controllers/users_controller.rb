@@ -76,6 +76,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        if params[:admin] == "true"
+          @user.roles << Role.find_by_name("admin")
+        end
         flash[:notice] = 'User was successfully created.'
         format.html { redirect_to "/users" }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
@@ -93,6 +96,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        if params[:admin] == "true"
+          @user.roles << Role.find_by_name("admin")
+        else
+          @user.roles.delete(Role.find_by_name("admin"))
+        end
         flash[:notice] = 'User was successfully updated.'
         format.html { redirect_to '/users' }
         format.xml  { head :ok }
