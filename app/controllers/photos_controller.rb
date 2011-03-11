@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-  
+ 
+  before_filter :login_required
 
   def take_pause_photo
     @photo = Photo.new

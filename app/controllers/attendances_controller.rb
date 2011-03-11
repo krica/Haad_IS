@@ -1,6 +1,8 @@
 class AttendancesController < ApplicationController
  
   before_filter :adjust_format_for_iphone, :only => [:list]
+  before_filter :login_required
+  before_filter :admin_required, :only => [:show]
 
   layout "application"
   

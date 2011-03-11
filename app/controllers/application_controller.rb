@@ -13,16 +13,20 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    if session[:user_id].nil?
+    if !session[:user_id].present?
       redirect_to "/"
     end
   end
   
   def admin_required
-    if @user = User.find(session[:user_id])
-      if !@user.is_admin?
-        redirect_to "/"
+    if session[:user_id].present?
+      if @user = User.find(session[:user_id])
+        if !@user.is_admin?
+          redirect_to "/"
+        end
       end
+    else
+      redirect_to "/"
     end
   end
 private

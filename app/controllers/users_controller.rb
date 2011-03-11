@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :adjust_format_for_iphone, :only => [:login, :show, :index]
-  before_filter :logout_user, :only => [:login]
-  before_filter :admin_required, :only => [:index, :update, :destroy, :create]
+  before_filter :login_required, :except => [:login, :verify_user]
+  before_filter :admin_required, :only => [:new, :edit, :index, :update, :destroy, :create]
   layout "application"
 
   def list
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
  
   def login
+    logout_user
     @count = User.now_working_count
     respond_to do |format|
       format.html { render :layout => "first" }# index.html.erb

@@ -1,4 +1,5 @@
 class ManageController < ApplicationController
+  
   before_filter :admin_required
   
   layout "application"
