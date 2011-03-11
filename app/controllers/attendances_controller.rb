@@ -30,7 +30,7 @@ class AttendancesController < ApplicationController
         to = Time.now
         flash[:notice] = "vybrane datum neni platne"
       end
-      @attendances = Attendance.find(:all, :conditions => ["start > ? AND end < ?  AND user_id = ? ", from, to+1.day, @user.id])
+      @attendances = Attendance.find(:all, :conditions => ["start > ? AND end < ?  AND user_id = ? ", from-1.day, to+1.day, @user.id])
       @attendances = @attendances + Attendance.find(:all, :conditions => ["start > ? AND start < ? AND end IS NULL  AND user_id = ? ", from, to+1.day, @user.id])
     else
       @attendances = @user.attendances
