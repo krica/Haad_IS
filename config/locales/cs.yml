@@ -42,9 +42,15 @@ cs:
     models:
       users: Uživatele
     errors:
+      models:
       template:
         header: Vyskytla se chyba
         body: nebylo možné záznam vytvořit
+    attributes:
+      user:
+        card: Číslo karty
+        name: Jméno
+        surname: Příjmení
   Leave: Odejít
   Duration: Délka
   Duration without pause: Délka bez pauz
@@ -60,3 +66,6 @@ cs:
   All users: Všichni zaměstnanci
   attendance unfinished: neukončena
   pause unfinished: neukončena
+  card has been taken: je již v systému používané
+  name must not be nil: nesmí být prázdné 
+  surname must not be nil: nesmí být prázdné

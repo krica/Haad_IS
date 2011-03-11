@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   has_many :attendances
   has_and_belongs_to_many :roles
-  validates_uniqueness_of :card
+  validates_uniqueness_of :card, :message => I18n.t("card has been taken")
   
-  validates_presence_of :name
-  validates_presence_of :surname
+  validates_presence_of :name, :message => I18n.t("name must not be nil")
+  validates_presence_of :surname, :message => I18n.t("surname must not be nil")
 
 
   def self.now_working
