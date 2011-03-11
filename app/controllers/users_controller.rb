@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.all
-    @users.sort!{|x,y| x.display_name <=> y.display_name}
+    @users.sort!{|x,y| x.surname <=> y.surname}
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

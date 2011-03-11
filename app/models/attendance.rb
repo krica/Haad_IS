@@ -23,7 +23,7 @@ class Attendance < ActiveRecord::Base
       return ret
       #return hours.to_i.to_s + "h " + minutes.to_i.to_s + "m " + seconds.to_i.to_s + "s" 
     else
-      return "--"
+      return I18n.t("attendance unfinished")
     end
   end
 
@@ -55,7 +55,7 @@ class Attendance < ActiveRecord::Base
         ret << minutes.to_i.to_s + "m " + seconds.to_i.to_s + "s"
         return ret
       else
-        return "--"
+        return I18n.t("attendance unfinished")
       end
     end
 

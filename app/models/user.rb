@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   end
   
   def display_name
-    return self.name.to_s + " " + self.surname.to_s
+    return self.surname.to_s + " " + self.name.to_s
   end
 
 end
