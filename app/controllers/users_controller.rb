@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def verify_user
-    if @user = User.find_by_card(params[:card])
+    if params[:card].present? && @user = User.find_by_card(params[:card])
       session[:user_id] = @user.id
       redirect_to "/attendances"
     else
@@ -96,10 +96,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+	@user.roles.delete(Role.find_by_name("admin"))
         if params[:admin] == "true"
-          @user.roles << Role.find_by_name("admin")
-        else
-          @user.roles.delete(Role.find_by_name("admin"))
+          @user.roles << Role.find_by_name("admin")          
         end
         flash[:notice] = 'User was successfully updated.'
         format.html { redirect_to '/users' }
